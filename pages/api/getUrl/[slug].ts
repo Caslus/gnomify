@@ -24,5 +24,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 		return;
 	}
 
+	// vercel caching
+	// https://vercel.com/docs/concepts/edge-network/caching
+	res.setHeader("Content-Type", "application/json");
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	res.setHeader("Cache-Control", "s-maxage=9999999999, stale-while-revalidate");
+
 	return res.json({ url: data.url });
 };
