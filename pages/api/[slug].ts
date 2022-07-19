@@ -6,7 +6,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
 	if (!slug || typeof slug !== "string") {
 		res.statusCode = 400;
-		res.send(JSON.stringify({ message: "bad request" }));
+		res.json({ message: "bad request" });
 		return;
 	}
 
@@ -20,9 +20,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
 	if (!data) {
 		res.statusCode = 404;
-		res.send(JSON.stringify({ message: "slug not found" }));
+		res.json({ message: "slug not found" });
 		return;
 	}
 
-	return res.redirect(data.url);
+	return res.json({ url: data.url });
 };
