@@ -2,7 +2,7 @@ function Footer() {
 	return (
 		<footer className="footer footer-center p-2 bg-base-200 gap-y-1">
 			<p>made with ❤ by lucas!</p>
-			<a href="https://google.com">
+			<a href="https://github.com/Caslus/gnomify">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"
